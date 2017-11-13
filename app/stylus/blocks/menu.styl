@@ -1,0 +1,108 @@
+menu__icon()
+	cursor pointer
+	border-radius 1px
+	height 3px
+	width 25px
+	background black
+	position absolute
+	display block
+	content ''
+	transition all .2s ease .2s, transform .2s ease 0s
+
+.menu
+	position relative
+	font-weight 700
+	margin 0 -10px
+	@media (min-width 768px)
+		margin 0
+	&__btn
+		width 100%
+		background-color rgba(0, 0, 0, 0.1)
+		text-align left
+		position relative
+		cursor pointer
+		user-select none
+		@media (min-width 768px)
+			display none
+		&.open
+			.menu__icon
+				background transparent
+				&:before
+					transform rotate(45deg)
+					top 0
+					transition all .2s ease 0s, transform .2s ease .2s
+				&:after
+					transform rotate(-45deg)
+					bottom 0
+					transition all .2s ease 0s, transform .2s ease .2s
+	&__icon
+		position absolute
+		top 50%
+		left 10px
+		transform translatey(-50%)
+		menu__icon()
+		&:before, &:after
+			menu__icon()
+		&:before
+			top 8px
+		&:after
+			bottom 8px
+	&__title
+		margin-left 45px
+		line-height 40px
+		text-transform uppercase
+		font-size 20px
+	&__ul
+		list-style none
+		margin 0
+		padding 0
+		position relative
+		top 100%
+		left 0
+		width 100%
+		background-color rgba(0, 0, 0, 0.05)
+		z-index 9999
+		max-height 0
+		overflow hidden
+		transition all .4s ease-out 0s
+		&.open
+			max-height 190px
+		@media (min-width 768px)
+			position static
+			background-color transparent
+			display block
+			text-align center
+			max-height 50000px
+		@media (min-width 1200px)
+			text-align right
+		li 
+			display block
+			margin 0
+			box-sizing border-box
+			position relative
+			border-top 1px solid rgba(0, 0, 0, 0.1)
+			@media (min-width 768px)
+				display inline-block
+				margin-left 35px
+				border none
+				&:last-child
+					border-bottom none
+			&:first-child
+				margin-left 0
+				border none
+			&:last-child
+				border-bottom 1px solid rgba(0, 0, 0, 0.1)
+			a 
+				display inline-block
+				width 100%
+				font-size 17.6px // 22px / 1.25
+				text-transform uppercase
+				color black
+				text-decoration none
+				padding 17px
+				@media (min-width 768px)
+					padding 40px 0
+				@media (min-width 992px)
+					font-size 22px
+				&:hover
+					text-decoration underline

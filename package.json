@@ -1,0 +1,27 @@
+{
+  "name": "store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ND",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-group-css-media-queries": "^1.2.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-stylus": "^2.6.0",
+    "gulp-tinypng": "^1.0.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp.spritesmith": "^6.5.1"
+  },
+  "dependencies": {}
+}

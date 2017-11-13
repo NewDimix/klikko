@@ -1,0 +1,64 @@
+icon-facebook-mini()
+	background-image url(../img/sprite-mini.png)
+	background-position 0px 0px
+	width 55px
+	height 55px
+
+icon-google-mini()
+	background-image url(../img/sprite-mini.png)
+	background-position -60px 0px
+	width 55px
+	height 55px
+
+icon-linkedin-mini()
+	background-image url(../img/sprite-mini.png)
+	background-position 0px -60px
+	width 55px
+	height 55px
+
+icon-facebook()
+	background-image url(../img/sprite.png)
+	background-position 0px -70px
+	width 110px
+	height 110px
+ 
+icon-google()
+	background-image url(../img/sprite.png)
+	background-position -194px 0px
+	width 110px
+	height 110px
+
+icon-linkedin()
+	background-image url(../img/sprite.png)
+	background-position 0px -185px
+	width 110px
+	height 110px
+
+.social
+	&__title
+		font-size 26.7px // 40px / 1.5
+		color $orange-dark-color
+		font-weight 700
+		margin 0
+		margin-bottom 15px
+		text-transform uppercase
+		@media (min-width 1200px)
+			font-size 40px
+			margin-bottom 30px
+	&__facebook
+		display inline-block
+		margin-right 16px
+		icon-facebook-mini()
+		@media (min-width 1200px)
+			icon-facebook()
+	&__linkedin
+		display inline-block
+		margin-right 16px
+		icon-linkedin-mini()
+		@media (min-width 1200px)
+			icon-linkedin()
+	&__google
+		display inline-block
+		icon-google-mini()
+		@media (min-width 1200px)
+			icon-google()
