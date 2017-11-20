@@ -10,15 +10,22 @@
     h1
         margin 0
 
+    &__column
+        @media (min-width 1200px)
+            display inline-block
+
+        &_2
+            @media (min-width 1200px)
+                float right
+
     &__logo
         display block
         text-align center
-        margin 0 auto
+        margin-left auto
+        margin-right auto
         margin-bottom 20px
-
-        @media (min-width 768px)
-            margin 0 auto
+        vertical-align top
+        padding-top 11px
 
         @media (min-width 1200px)
-            position absolute
-            bottom 21px
+            margin-bottom 0
