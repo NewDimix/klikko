@@ -1,165 +1,220 @@
 half()
-	display inline-block
-	width 48.5%
-	margin-right 3%
+    display inline-block
+    width 48.5%
+    margin-right 3%
 
 third()
-	display inline-block
-	width 30%
-	margin-right 5%
+    display inline-block
+    width 30%
+    margin-right 5%
 
 icon-pay()
-	background-image url(../img/sprite.png)
-	background-position -309px 0px
-	width 203px
-	height 25px
-	
+    background-image url(../img/sprite.png)
+    background-position -309px 0px
+    width 203px
+    height 25px
+
 .checkout
-	font-size 22.4px // 28px / 1.25
-	@media (min-width 1200px)
-		font-size 28px
-	input, textarea
-		width 100%
-		background-color white
-		border none
-		padding 8px 10px
-		box-sizing border-box
-		margin 3px 0 8px
-		outline none
-		resize none
-		@media (min-width 1200px)
-			margin-bottom 20px
-	textarea
-		padding 13px 17px
-		height 125px
-		@media (min-width 480px)
-			height auto
-	fieldset
-		border none
-		margin 0
-		padding 0
-	&__title
-		font-weight 700
-		font-size 60px // 80px
-		margin 0
-		margin-bottom 20px
-		text-transform uppercase
-		@media (min-width 1200px)
-			font-size 80px
-			margin-bottom 60px
-	&__column
-		@media (min-width 992px)
-			half()
-			vertical-align top
-		&:nth-of-type(2n)
-			margin-right 0
-	&__path
-		margin-bottom 30px
-		&_mb0
-			margin-bottom 0
-	&__subtitle
-		font-weight 700
-		font-size 22.6px // 34px / 1.5
-		margin 0
-		margin-bottom 15px
-		margin-left 3px
-		text-transform uppercase
-		@media (min-width 480px)
-			font-size 27.2px // 34px / 1.25
-		@media (min-width 1200px)
-			font-size 34px
-			margin-bottom 25px
-	&__input
-		line-height 30px
-		&_half
-			@media (min-width 480px)
-				half()
-				width 48%
-				margin-right 4%
-		&_third
-			@media (min-width 480px)
-				third()
-		&_mr0
-			@media (min-width 480px)
-				margin-right 0
-	&__agreement
-		margin-top 36px
-		@media (min-width 480px)
-			line-height 37px
-		input
-			display inline-block
-			width 14px
-			margin-right 5px
-			position absolute
-			opacity 0
-			& + label
-				display block
-				cursor pointer
-				background-color $orange-light-color
-				position relative
-				padding 10px 0 10px 55px
-				@media (min-width 480px)
-					padding 10px 35px 10px 55px
-					text-align center
-				&:before
-					content ''
-					position absolute
-					left 8px
-					top 50%
-					transform translateY(-50%)
-					width 42px
-					height 42px
-					background-color white
-					box-sizing border-box
-					transition background-color .15s linear
-					border 6px solid white
-			&:checked
-				& + label
-					&:before
-						background-color saturation($orange-dark-color, 75%)
-	&__text-order
-		width 100%
-		background-color white
-		padding 10px
-		font-size 22.4px // 28px / 1.25
-		@media (min-width 1200px)
-			font-size 28px
-		thead
-			td
-				padding-bottom 15px
-		thead, tfoot
-			font-weight 700
-		td:last-child
-			text-align right
-	&__btn
-		font-weight 700
-		margin 15px 0 !important
-		color $orange-normal-color
-		cursor pointer
-		@media (min-width 1200px)
-			margin 20px 0 !important
-	&__quickpay
-		display block
-		color black
-		position relative
-		background-color $orange-light-color
-		padding 10px
-		text-decoration none
-	&__quickpay-title
-		display inline-block
-		font-size 22.4px // 28px / 1.25
-		margin 0
-		margin-right 10px
-		margin-bottom 5px
-		@media (min-width 1200px)
-			font-size 28px
-	&__quickpay-img
-		display inline-block
-		vertical-align middle
-		icon-pay()
-	&__quickpay-desc
-		margin 0
-		margin-top 5px
-		font-size 16px // 20px / 1.25
-		@media (min-width 1200px)
-			font-size 20px
+    font-size 22.4px // 28px / 1.25
+
+    @media (min-width 1200px)
+        font-size 28px
+
+    input, textarea
+        width 100%
+        background-color white
+        border none
+        padding 8px 10px
+        box-sizing border-box
+        margin 3px 0 8px
+        outline none
+        resize none
+
+        @media (min-width 1200px)
+            margin-bottom 20px
+
+    textarea
+        padding 13px 17px
+        height 125px
+
+        @media (min-width 480px)
+            height auto
+
+    fieldset
+        border none
+        margin 0
+        padding 0
+
+    &__title
+        font-weight 700
+        font-size 60px // 80px
+        margin 0
+        margin-bottom 20px
+        text-transform uppercase
+
+        @media (min-width 1200px)
+            font-size 80px
+            margin-bottom 60px
+
+    &__column
+        @media (min-width 992px)
+            half()
+            vertical-align top
+
+        &:nth-of-type(2n)
+            margin-right 0
+
+    &__path
+        margin-bottom 30px
+
+        &_mb0
+            margin-bottom 0
+
+    &__subtitle
+        font-weight 700
+        font-size 22.6px // 34px / 1.5
+        margin 0
+        margin-bottom 15px
+        margin-left 3px
+        text-transform uppercase
+
+        @media (min-width 480px)
+            font-size 27.2px // 34px / 1.25
+
+        @media (min-width 1200px)
+            font-size 34px
+            margin-bottom 25px
+
+    &__input
+        line-height 30px
+
+        &_half
+            @media (min-width 480px)
+                half()
+                width 48%
+                margin-right 4%
+
+        &_third
+            @media (min-width 480px)
+                third()
+
+        &_mr0
+            @media (min-width 480px)
+                margin-right 0
+
+    &__agreement
+        margin-top 36px
+
+        @media (min-width 480px)
+            line-height 37px
+
+        input
+            display inline-block
+            width 14px
+            margin-right 5px
+            position absolute
+            opacity 0
+
+            & + label
+                display block
+                cursor pointer
+                background-color $orange-light-color
+                position relative
+                padding 10px 0 10px 60px
+
+                @media (min-width 480px)
+                    padding 10px 35px 10px 55px
+                    text-align center
+
+                &:before
+                    content ''
+                    position absolute
+                    left 8px
+                    top 50%
+                    transform translateY(-50%)
+                    width 42px
+                    height 42px
+                    background-color white
+                    box-sizing border-box
+                    border 6px solid white
+
+                &:after
+                    content ''
+                    width 25px
+                    height 15px
+                    border-left 3px solid black
+                    border-bottom 3px solid black
+                    position absolute
+                    left 15px
+                    top 50%
+                    transform translateY(-80%) rotate(-45deg)
+                    opacity 0
+                    transition all .15s linear
+
+            &:checked
+                & + label
+                    &:after
+                        opacity 1
+
+    &__text-order
+        width 100%
+        background-color white
+        padding 10px
+        font-size 22.4px // 28px / 1.25
+
+        @media (min-width 1200px)
+            font-size 28px
+
+        thead
+            td
+                padding-bottom 15px
+
+        thead, tfoot
+            font-weight 700
+
+        td:last-child
+            text-align right
+
+    &__btn
+        width 100%
+        background-color white
+        border none
+        outline none
+        font-weight 700
+        margin 15px 0 !important
+        color $orange-normal-color
+        cursor pointer
+
+        @media (min-width 1200px)
+            margin 20px 0 !important
+
+    &__quickpay
+        display block
+        color black
+        position relative
+        background-color $orange-light-color
+        padding 10px
+        text-decoration none
+
+    &__quickpay-title
+        display inline-block
+        font-size 22.4px // 28px / 1.25
+        margin 0
+        margin-right 10px
+        margin-bottom 5px
+
+        @media (min-width 1200px)
+            font-size 28px
+
+    &__quickpay-img
+        display inline-block
+        vertical-align middle
+        icon-pay()
+
+    &__quickpay-desc
+        margin 0
+        margin-top 5px
+        font-size 16px // 20px / 1.25
+
+        @media (min-width 1200px)
+            font-size 20px
