@@ -8,14 +8,37 @@ third()
     width 30%
     margin-right 5%
 
-icon-pay()
-    background-image url(../img/sprite.png)
-    background-position -309px 0px
-    width 203px
-    height 25px
+quickpay-img()
+    background-size contain
+    width 40px
+    height 32px
+
+visa()
+    background inline('visa.png') center no-repeat
+    background-size contain
+    width 40px
+    height 32px
+
+visaelectron()
+    background inline('visa-electron.png') center no-repeat
+    background-size contain
+    width 40px
+    height 32px
+
+mastercard()
+    background inline('master-card.png') center no-repeat
+    background-size contain
+    width 40px
+    height 32px
+
+maestro()
+    background inline('maestro.png') center no-repeat
+    background-size contain
+    width 40px
+    height 32px
 
 .checkout
-    font-size 22.4px // 28px / 1.25
+    font-size 18.67px // 28px / 1.5
 
     @media (min-width 1200px)
         font-size 28px
@@ -25,15 +48,14 @@ icon-pay()
         background-color white
         border none
         padding 8px 10px
-        box-sizing border-box
         margin-top 3px
         outline none
         resize none
 
     textarea
         padding 13px 17px
-        height 125px
-        vertical-align bottom
+        height 87px
+        vertical-align top
 
         @media (min-width 480px)
             height auto
@@ -42,10 +64,11 @@ icon-pay()
         border none
         margin 0
         padding 0
+        font-size 0
 
     &__title
         font-weight 700
-        font-size 60px // 80px
+        font-size 60px // 80px / 1.5
         margin 0
         margin-bottom 20px
         text-transform uppercase
@@ -63,8 +86,9 @@ icon-pay()
             margin-right 0
 
     &__path
+        font-size 0
         @media (max-width 991px)
-            margin-bottom 20px
+            margin-bottom 30px
 
         &_mb0
             margin-bottom 0
@@ -77,16 +101,25 @@ icon-pay()
         margin-left 3px
         text-transform uppercase
 
-        @media (min-width 480px)
-            font-size 27.2px // 34px / 1.25
-
         @media (min-width 1200px)
             font-size 34px
             margin-bottom 25px
 
     &__input
         line-height 30px
-        margin-bottom 20px
+        margin-bottom 15px
+        font-size 18.67px // 28px / 1.5
+
+        @media (min-width 1200px)
+            font-size 28px
+
+        &_mb0
+            margin-bottom 0
+
+        label
+            display inline-block
+            width 100%
+            line-height 17px
 
         &_half
             @media (min-width 480px)
@@ -104,9 +137,14 @@ icon-pay()
                 margin-right 0
 
     &__agreement
+        font-size 18.67px // 28px / 1.5
+
         @media (min-width 480px)
             line-height 37px
             margin-bottom 0
+
+        @media (min-width 1200px)
+            font-size 28px
 
         input
             display inline-block
@@ -135,8 +173,6 @@ icon-pay()
                     width 42px
                     height 42px
                     background-color white
-                    box-sizing border-box
-                    border 6px solid white
 
                 &:after
                     content ''
@@ -145,7 +181,7 @@ icon-pay()
                     border-left 3px solid black
                     border-bottom 3px solid black
                     position absolute
-                    left 15px
+                    left 18px
                     top 50%
                     transform translateY(-80%) rotate(-45deg)
                     opacity 0
@@ -160,7 +196,7 @@ icon-pay()
         width 100%
         background-color white
         padding 10px
-        font-size 22.4px // 28px / 1.25
+        font-size 18.67px // 28px / 1.5
 
         @media (min-width 1200px)
             font-size 28px
@@ -181,11 +217,15 @@ icon-pay()
         border none
         outline none
         font-weight 700
-        margin 15px 0 !important
+        margin-bottom 15px
         color $orange-normal-color
         cursor pointer
+        font-size 18.67px // 28px / 1.5
+        padding 0
+        line-height 30px
 
         @media (min-width 1200px)
+            font-size 28px
             margin 20px 0 !important
 
     &__quickpay
@@ -201,21 +241,40 @@ icon-pay()
 
         span
             display inline-block
-            font-size 22.4px // 28px / 1.25
+            font-size 18.67px // 28px / 1.5
             margin-right 10px
+            vertical-align middle
 
             @media (min-width 1200px)
                 font-size 28px
 
-    &__quickpay-img
+    &__quickpay-img-wrap
         display inline-block
-        icon-pay()
-        vertical-align top
+        vertical-align middle
+        > *
+            display inline-block
+            margin-right 5px
+
+            &:last-child
+                margin-right 0
+
+    &__visa-img
+        background inline('visa.png') center no-repeat
+        quickpay-img()
+    &__visaelectron-img
+        background inline('visa-electron.png') center no-repeat
+        quickpay-img()
+    &__mastercard-img
+        background inline('master-card.png') center no-repeat
+        quickpay-img()
+    &__maestro-img
+        background inline('maestro.png') center no-repeat
+        quickpay-img()
 
     &__quickpay-desc
         p
             margin 0
-            font-size 16px // 20px / 1.25
+            font-size 13.33px // 20px / 1.5
             margin-bottom 10px
 
             @media (min-width 1200px)

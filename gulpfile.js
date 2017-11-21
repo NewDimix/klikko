@@ -9,7 +9,8 @@ var gulp = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
   htmlmin = require('gulp-htmlmin'),
   imagemin = require('gulp-imagemin'),
-  spritesmith = require('gulp.spritesmith');
+  spritesmith = require('gulp.spritesmith'),
+  base64 = require('gulp-base64-inline');
 
 var workDir = './';
 
@@ -17,8 +18,8 @@ var path = {
   app: {
     js: workDir + 'app/js/**/*.js',
     style: workDir + 'app/stylus/*.styl',
-    img: workDir + 'app/img/**/*.*',
-    imgSprite: workDir + 'app/img/icon/*.*',
+    img: workDir + 'app/img/img/*.*',
+    imgSprite: workDir + 'app/img/sprite/*.*',
     html: workDir + 'app/html/*.html'
   },
   dist: {
@@ -38,7 +39,7 @@ var path = {
 gulp.task('html', function () {
   gulp.src(path.app.html)
     .pipe(rigger())
-    .pipe(htmlmin({collapseWhitespace: true}))
+//    .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest(path.dist.html))
     .pipe(browserSync.reload({
       stream: true
@@ -54,6 +55,19 @@ gulp.task('css', function () {
         cascade: false
     }))
     .pipe(cleanCss())
+    .pipe(base64('../../app/img/base64'))
+    .pipe(gulp.dest(path.dist.css))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+});
+
+gulp.task('css-vendors', function () {
+  return gulp.src([
+    'node_modules/normalize.css/normalize.css'
+  ])
+    .pipe(cleanCss())
+    .pipe(concat('vendor.min.css'))
     .pipe(gulp.dest(path.dist.css))
     .pipe(browserSync.reload({
       stream: true
@@ -67,19 +81,16 @@ gulp.task('img', function () {
 });
 
 gulp.task('sprite', function() {
-    var spriteData = 
+    var spriteData =
         gulp.src(path.app.imgSprite) // путь, откуда берем картинки для спрайта
             .pipe(spritesmith({
                 imgName: 'sprite.png',
                 cssName: 'sprite.css',
                 algorithm: 'binary-tree',
-				padding: 5,
-                cssVarMap: function(sprite) {
-                    sprite.name = sprite.name
-                }
+        padding: 20
             }));
 
-    spriteData.img.pipe(gulp.dest('app/')); // путь, куда сохраняем картинку
+    spriteData.img.pipe(gulp.dest('app/img/')); // путь, куда сохраняем картинку
     spriteData.css.pipe(gulp.dest('app/')); // путь, куда сохраняем стили
 });
 
@@ -94,9 +105,9 @@ gulp.task('js', function () {
     }))
 });
 
-gulp.task('js-libs', function () {
+gulp.task('js-vendors', function () {
   return gulp.src([
-    'app/js/libs/jquery/dist/jquery.min.js'
+    'node_modules/jquery/dist/jquery.min.js'
   ])
     .pipe(concat('vendor.min.js'))
     .pipe(uglify())
@@ -112,7 +123,7 @@ gulp.task('sync', function () {
   });
 });
 
-gulp.task('watch', ['sync', 'css', 'html', 'js-libs', 'js', 'img'], function () {
+gulp.task('watch', ['sync', 'css-vendors', 'css', 'html', 'js-vendors', 'js', 'img'], function () {
   gulp.watch(path.watch.style, ['css']);
   gulp.watch(path.watch.html, ['html']);
   gulp.watch(path.watch.js, ['js']);
