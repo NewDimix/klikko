@@ -1,7 +1,6 @@
 var gulp = require('gulp'),
   stylus = require('gulp-stylus'),
   browserSync = require('browser-sync'),
-  rigger = require('gulp-rigger'),
   concat = require('gulp-concat'),
   uglify = require('gulp-uglify'),
   cleanCss = require('gulp-clean-css'),
@@ -10,7 +9,8 @@ var gulp = require('gulp'),
   htmlmin = require('gulp-htmlmin'),
   imagemin = require('gulp-imagemin'),
   spritesmith = require('gulp.spritesmith'),
-  base64 = require('gulp-base64-inline');
+  base64 = require('gulp-base64-inline'),
+  fileinclude = require('gulp-file-include');
 
 var workDir = './';
 
@@ -38,7 +38,10 @@ var path = {
 
 gulp.task('html', function () {
   gulp.src(path.app.html)
-    .pipe(rigger())
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
 //    .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest(path.dist.html))
     .pipe(browserSync.reload({
@@ -81,14 +84,13 @@ gulp.task('img', function () {
 });
 
 gulp.task('sprite', function() {
-    var spriteData =
-        gulp.src(path.app.imgSprite) // путь, откуда берем картинки для спрайта
-            .pipe(spritesmith({
-                imgName: 'sprite.png',
-                cssName: 'sprite.css',
-                algorithm: 'binary-tree',
-        padding: 20
-            }));
+  var spriteData = gulp.src(path.app.imgSprite) // путь, откуда берем картинки для спрайта
+    .pipe(spritesmith({
+      imgName: 'sprite.png',
+      cssName: 'sprite.css',
+      algorithm: 'binary-tree',
+      padding: 20
+    }));
 
     spriteData.img.pipe(gulp.dest('app/img/')); // путь, куда сохраняем картинку
     spriteData.css.pipe(gulp.dest('app/')); // путь, куда сохраняем стили
