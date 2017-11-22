@@ -14,6 +14,7 @@
     "gulp": "^3.9.1",
     "gulp-base64-inline": "^1.0.3",
     "gulp-concat": "^2.6.1",
+    "gulp-file-include": "^1.2.0",
     "gulp-group-css-media-queries": "^1.2.0",
     "gulp-htmlmin": "^3.0.0",
     "gulp-imagemin": "^3.4.0",
@@ -25,7 +26,6 @@
     "postcss-csso": "^3.0.0"
   },
   "dependencies": {
-    "gulp-file-include": "^1.2.0",
     "normalize.css": "^7.0.0",
     "slick-carousel": "^1.8.1"
   }
