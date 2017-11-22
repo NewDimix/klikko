@@ -49,8 +49,10 @@ maestro()
         border none
         padding 8px 10px
         margin-top 3px
-        outline none
         resize none
+
+        &:focus
+            outline-color #a35200
 
     textarea
         padding 13px 17px
@@ -75,7 +77,7 @@ maestro()
 
         @media (min-width 1200px)
             font-size 80px
-            margin-bottom 60px
+            margin-bottom 64px
 
     &__column
         @media (min-width 992px)
@@ -87,10 +89,12 @@ maestro()
 
     &__path
         font-size 0
-        @media (max-width 991px)
-            margin-bottom 30px
+        margin-bottom 30px
 
-        &_mb0
+        @media (min-width 1200px)
+            margin-bottom 55px
+
+        &:last-child
             margin-bottom 0
 
     &__subtitle
@@ -105,15 +109,27 @@ maestro()
             font-size 34px
             margin-bottom 25px
 
+    &__line
+        margin-bottom 15px
+
+        @media (min-width 1200px)
+            margin-bottom 25px
+
+        &:last-child
+            margin-bottom 0
+
     &__input
         line-height 30px
-        margin-bottom 15px
         font-size 18.67px // 28px / 1.5
+        margin-bottom 10px
+
+        @media (min-width 480px)
+            margin-bottom 0
 
         @media (min-width 1200px)
             font-size 28px
 
-        &_mb0
+        &:last-child
             margin-bottom 0
 
         label
@@ -121,30 +137,35 @@ maestro()
             width 100%
             line-height 17px
 
+            @media (min-width 1200px)
+                line-height 27px
+
         &_half
             @media (min-width 480px)
                 half()
                 width 48%
                 margin-right 4%
 
+            &:last-child
+                margin-right 0
+
         &_third
             @media (min-width 480px)
                 third()
-                margin-bottom 36px
 
-        &_mr0
-            @media (min-width 480px)
+            &:last-child
                 margin-right 0
 
     &__agreement
         font-size 18.67px // 28px / 1.5
+        margin-bottom 30px
 
-        @media (min-width 480px)
-            line-height 37px
+        @media (min-width 992px)
             margin-bottom 0
 
         @media (min-width 1200px)
             font-size 28px
+            line-height 37px
 
         input
             display inline-block
@@ -152,6 +173,9 @@ maestro()
             margin-right 5px
             position absolute
             opacity 0
+
+            &:focus + label
+                outline 2px solid rgba(163, 82, 0, 0.1)
 
             & + label
                 display block
@@ -215,18 +239,19 @@ maestro()
         width 100%
         background-color white
         border none
-        outline none
         font-weight 700
-        margin-bottom 15px
-        color $orange-normal-color
+        color $orange-dark-color
         cursor pointer
         font-size 18.67px // 28px / 1.5
         padding 0
-        line-height 30px
+        line-height 40px
 
         @media (min-width 1200px)
             font-size 28px
-            margin 20px 0 !important
+            line-height 55px
+
+        &:focus
+            outline-color #a35200
 
     &__quickpay
         display block
@@ -235,6 +260,9 @@ maestro()
         background-color $orange-light-color
         padding 10px
         text-decoration none
+
+        &:focus
+            outline-color #a35200
 
     &__quickpay-title
         margin-bottom 5px

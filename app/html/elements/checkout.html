@@ -7,50 +7,60 @@
                 <div class="checkout__path">
                     <h2 class="checkout__subtitle">Faktureringsoplysninger</h2>
 
-                    <div class="checkout__input checkout__input_half">
-                        <label>Fornavn<input type="text"></label>
+                    <div class="checkout__line">
+                        <div class="checkout__input checkout__input_half">
+                            <label>Fornavn<input type="text"></label>
+                        </div>
+
+                        <div class="checkout__input checkout__input_half">
+                            <label>Efternavn<input type="text"></label>
+                        </div>
                     </div>
 
-                    <div class="checkout__input checkout__input_half checkout__input_mr0">
-                        <label>Efternavn<input type="text"></label>
+                    <div class="checkout__line">
+                        <div class="checkout__input checkout__input_half">
+                            <label>Firmanavn<input type="text"></label>
+                        </div>
+
+                        <div class="checkout__input checkout__input_half">
+                            <label>CVR<input type="text"></label>
+                        </div>
                     </div>
 
-                    <div class="checkout__input checkout__input_half">
-                        <label>Firmanavn<input type="text"></label>
+                    <div class="checkout__line">
+                        <div class="checkout__input checkout__input_half">
+                            <label>E-mail<input type="email"></label>
+                        </div>
+
+                        <div class="checkout__input checkout__input_half">
+                            <label>Telefon<input type="tel"></label>
+                        </div>
                     </div>
 
-                    <div class="checkout__input checkout__input_half checkout__input_mr0">
-                        <label>CVR<input type="text"></label>
+                    <div class="checkout__line">
+                        <div class="checkout__input">
+                            <label>Adresse<input type="text"></label>
+                        </div>
                     </div>
 
-                    <div class="checkout__input checkout__input_half">
-                        <label>E-mail<input type="email"></label>
-                    </div>
+                    <div class="checkout__line">
+                        <div class="checkout__input checkout__input_third">
+                            <label>Postnummer<input type="number"></label>
+                        </div>
 
-                    <div class="checkout__input checkout__input_half checkout__input_mr0">
-                        <label>Telefon<input type="tel"></label>
-                    </div>
+                        <div class="checkout__input checkout__input_third">
+                            <label>By<input type="text"></label>
+                        </div>
 
-                    <div class="checkout__input">
-                        <label>Adresse<input type="text"></label>
+                        <div class="checkout__input checkout__input_third">
+                            <label>Land<input type="text"></label>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="checkout__input checkout__input_third">
-                        <label>Postnummer<input type="number"></label>
-                    </div>
-
-                    <div class="checkout__input checkout__input_third">
-                        <label>By<input type="text"></label>
-                    </div>
-
-                    <div class="checkout__input checkout__input_third checkout__input_mr0">
-                        <label>Land<input type="text"></label>
-                    </div>
-
-                    <div class="checkout__agreement">
-                        <input type="checkbox" id="checkbox-agreement">
-                        <label for="checkbox-agreement">Jeg har læst og accepterer handdelsbetingrlserne</label>
-                    </div>
+                <div class="checkout__agreement">
+                    <input type="checkbox" id="checkbox-agreement">
+                    <label for="checkbox-agreement">Jeg har læst og accepterer handdelsbetingrlserne</label>
                 </div>
             </div>
 
@@ -58,68 +68,78 @@
                 <div class="checkout__path">
                     <h2 class="checkout__subtitle">Yderligere information</h2>
 
-                    <div class="checkout__input">
-                        <label>Ordre bemærkninger<textarea placeholder="Bemærkninger om din ordre, f.eks særlige bemærkninger for levering."></textarea></label>
-                    </div>
-
-                    <div class="checkout__input checkout__input_half">
-                        <label>Søgeord (en per linie)<input type="text"></label>
-                    </div>
-
-                    <div class="checkout__input checkout__input_half checkout__input_mr0">
-                        <label>URL (kun én URL)<input type="text"></label>
-                    </div>
-                </div>
-
-                <div class="checkout__path checkout__path_mb0">
-                    <h2 class="checkout__subtitle">Din ordre</h2>
-
-                    <table class="checkout__text-order">
-                        <thead>
-                            <tr>
-                                <td>Powerlink Aherf Domain Rating 30+</td>
-                                <td>x1</td>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td>Subtotal</td>
-                                <td>5.000,00</td>
-                            </tr>
-                            <tr>
-                                <td>Moms</td>
-                                <td>1.250,00</td>
-                            </tr>
-                        </tbody>
-
-                        <tfoot>
-                            <tr>
-                                <td>Total</td>
-                                <td>6.250,00</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-
-                <button class="checkout__btn">Gå til betaling</button>
-
-                <a class="checkout__quickpay" href="#">
-                    <div class="checkout__quickpay-title">
-                        <span>Quickpay</span>
-
-                        <div class="checkout__quickpay-img-wrap">
-                            <div class="checkout__visa-img"></div>
-                            <div class="checkout__visaelectron-img"></div>
-                            <div class="checkout__mastercard-img"></div>
-                            <div class="checkout__maestro-img"></div>
+                    <div class="checkout__line">
+                        <div class="checkout__input">
+                            <label>Ordre bemærkninger<textarea placeholder="Bemærkninger om din ordre, f.eks særlige bemærkninger for levering."></textarea></label>
                         </div>
                     </div>
 
-                    <div class="checkout__quickpay-desc">
-                        <p>Betaling via Quickpay. Betal med kreditkort via Quickpay</p>
+                    <div class="checkout__line">
+                        <div class="checkout__input checkout__input_half">
+                            <label>Søgeord (en per linie)<input type="text"></label>
+                        </div>
+
+                        <div class="checkout__input checkout__input_half">
+                            <label>URL (kun én URL)<input type="text"></label>
+                        </div>
                     </div>
-                </a>
+                </div>
+
+                <div class="checkout__path">
+                    <h2 class="checkout__subtitle">Din ordre</h2>
+
+                    <div class="checkout__line">
+                        <table class="checkout__text-order">
+                            <thead>
+                                <tr>
+                                    <td>Powerlink Aherf Domain Rating 30+</td>
+                                    <td>x1</td>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Subtotal</td>
+                                    <td>5.000,00</td>
+                                </tr>
+                                <tr>
+                                    <td>Moms</td>
+                                    <td>1.250,00</td>
+                                </tr>
+                            </tbody>
+
+                            <tfoot>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>6.250,00</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <div class="checkout__line">
+                        <button class="checkout__btn">Gå til betaling</button>
+                    </div>
+
+                    <div class="checkout__line">
+                        <a class="checkout__quickpay" href="#">
+                            <div class="checkout__quickpay-title">
+                                <span>Quickpay</span>
+
+                                <div class="checkout__quickpay-img-wrap">
+                                    <div class="checkout__visa-img"></div>
+                                    <div class="checkout__visaelectron-img"></div>
+                                    <div class="checkout__mastercard-img"></div>
+                                    <div class="checkout__maestro-img"></div>
+                                </div>
+                            </div>
+
+                            <div class="checkout__quickpay-desc">
+                                <p>Betaling via Quickpay. Betal med kreditkort via Quickpay</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </fieldset>
     </form>
