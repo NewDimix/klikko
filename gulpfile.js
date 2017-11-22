@@ -4,7 +4,7 @@ var gulp = require('gulp'),
   concat = require('gulp-concat'),
   uglify = require('gulp-uglify'),
   gcmq = require('gulp-group-css-media-queries'),
-  autoprefixer = require('gulp-autoprefixer'),
+  autoprefixer = require('autoprefixer'),
   htmlmin = require('gulp-htmlmin'),
   imagemin = require('gulp-imagemin'),
   spritesmith = require('gulp.spritesmith'),
@@ -70,10 +70,13 @@ gulp.task('css', function () {
 });
 
 gulp.task('css-vendors', function () {
+  var plugins = [
+    csso
+  ];
   return gulp.src([
     'node_modules/normalize.css/normalize.css'
   ])
-    .pipe(cleanCss())
+    .pipe(postcss(plugins))
     .pipe(concat('vendor.min.css'))
     .pipe(gulp.dest(path.dist.css))
     .pipe(browserSync.reload({
