@@ -13,13 +13,12 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-base64-inline": "^1.0.3",
-    "gulp-clean-css": "^3.9.0",
     "gulp-concat": "^2.6.1",
     "gulp-group-css-media-queries": "^1.2.0",
     "gulp-htmlmin": "^3.0.0",
     "gulp-imagemin": "^3.4.0",
+    "gulp-postcss": "^7.0.0",
     "gulp-stylus": "^2.6.0",
-    "gulp-tinypng": "^1.0.2",
     "gulp-uglify": "^3.0.0",
     "gulp.spritesmith": "^6.5.1",
     "jquery": "^3.2.1"
@@ -27,6 +26,7 @@
   "dependencies": {
     "gulp-file-include": "^1.2.0",
     "normalize.css": "^7.0.0",
+    "postcss-csso": "^3.0.0",
     "slick-carousel": "^1.8.1"
   }
 }

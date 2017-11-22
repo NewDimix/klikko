@@ -3,14 +3,15 @@ var gulp = require('gulp'),
   browserSync = require('browser-sync'),
   concat = require('gulp-concat'),
   uglify = require('gulp-uglify'),
-  cleanCss = require('gulp-clean-css'),
   gcmq = require('gulp-group-css-media-queries'),
   autoprefixer = require('gulp-autoprefixer'),
   htmlmin = require('gulp-htmlmin'),
   imagemin = require('gulp-imagemin'),
   spritesmith = require('gulp.spritesmith'),
   base64 = require('gulp-base64-inline'),
-  fileinclude = require('gulp-file-include');
+  fileinclude = require('gulp-file-include'),
+  postcss = require('gulp-postcss'),
+  csso = require('postcss-csso');
 
 var workDir = './';
 
@@ -50,15 +51,18 @@ gulp.task('html', function () {
 });
 
 gulp.task('css', function () {
+  var plugins = [
+    autoprefixer({
+        browsers: ['last 3 versions'],
+        cascade: false
+    }),
+    csso
+  ];
   return gulp.src(path.app.style)
     .pipe(stylus())
     .pipe(gcmq())
-    .pipe(autoprefixer({
-        browsers: ['last 3 versions'],
-        cascade: false
-    }))
-    .pipe(cleanCss())
     .pipe(base64('../../app/img/base64'))
+    .pipe(postcss(plugins))
     .pipe(gulp.dest(path.dist.css))
     .pipe(browserSync.reload({
       stream: true
