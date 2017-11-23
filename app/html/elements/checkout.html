@@ -7,7 +7,7 @@
                 <div class="checkout__path">
                     <h2 class="checkout__subtitle">Faktureringsoplysninger</h2>
 
-                    <div class="checkout__line">
+                    <div class="checkout__row">
                         <div class="checkout__input checkout__input_half">
                             <label>Fornavn<input type="text"></label>
                         </div>
@@ -17,7 +17,7 @@
                         </div>
                     </div>
 
-                    <div class="checkout__line">
+                    <div class="checkout__row">
                         <div class="checkout__input checkout__input_half">
                             <label>Firmanavn<input type="text"></label>
                         </div>
@@ -27,7 +27,7 @@
                         </div>
                     </div>
 
-                    <div class="checkout__line">
+                    <div class="checkout__row">
                         <div class="checkout__input checkout__input_half">
                             <label>E-mail<input type="email"></label>
                         </div>
@@ -37,13 +37,13 @@
                         </div>
                     </div>
 
-                    <div class="checkout__line">
+                    <div class="checkout__row">
                         <div class="checkout__input">
                             <label>Adresse<input type="text"></label>
                         </div>
                     </div>
 
-                    <div class="checkout__line">
+                    <div class="checkout__row">
                         <div class="checkout__input checkout__input_third">
                             <label>Postnummer<input type="number"></label>
                         </div>
@@ -68,13 +68,13 @@
                 <div class="checkout__path">
                     <h2 class="checkout__subtitle">Yderligere information</h2>
 
-                    <div class="checkout__line">
+                    <div class="checkout__row">
                         <div class="checkout__input">
                             <label>Ordre bemærkninger<textarea placeholder="Bemærkninger om din ordre, f.eks særlige bemærkninger for levering."></textarea></label>
                         </div>
                     </div>
 
-                    <div class="checkout__line">
+                    <div class="checkout__row">
                         <div class="checkout__input checkout__input_half">
                             <label>Søgeord (en per linie)<input type="text"></label>
                         </div>
@@ -88,7 +88,7 @@
                 <div class="checkout__path">
                     <h2 class="checkout__subtitle">Din ordre</h2>
 
-                    <div class="checkout__line">
+                    <div class="checkout__row">
                         <table class="checkout__text-order">
                             <thead>
                                 <tr>
@@ -117,27 +117,22 @@
                         </table>
                     </div>
 
-                    <div class="checkout__line">
+                    <div class="checkout__row">
                         <button class="checkout__btn">Gå til betaling</button>
                     </div>
 
-                    <div class="checkout__line">
-                        <a class="checkout__quickpay" href="#">
+                    <div class="checkout__row">
+                        <button class="checkout__quickpay">
                             <div class="checkout__quickpay-title">
                                 <span>Quickpay</span>
 
-                                <div class="checkout__quickpay-img-wrap">
-                                    <div class="checkout__visa-img"></div>
-                                    <div class="checkout__visaelectron-img"></div>
-                                    <div class="checkout__mastercard-img"></div>
-                                    <div class="checkout__maestro-img"></div>
-                                </div>
+                                <div class="checkout__quickpay-img"></div>
                             </div>
 
                             <div class="checkout__quickpay-desc">
                                 <p>Betaling via Quickpay. Betal med kreditkort via Quickpay</p>
                             </div>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>

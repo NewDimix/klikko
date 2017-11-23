@@ -2,40 +2,13 @@ half()
     display inline-block
     width 48.5%
     margin-right 3%
+    vertical-align top
 
 third()
     display inline-block
     width 30%
     margin-right 5%
-
-quickpay-img()
-    background-size contain
-    width 40px
-    height 32px
-
-visa()
-    background inline('visa.png') center no-repeat
-    background-size contain
-    width 40px
-    height 32px
-
-visaelectron()
-    background inline('visa-electron.png') center no-repeat
-    background-size contain
-    width 40px
-    height 32px
-
-mastercard()
-    background inline('master-card.png') center no-repeat
-    background-size contain
-    width 40px
-    height 32px
-
-maestro()
-    background inline('maestro.png') center no-repeat
-    background-size contain
-    width 40px
-    height 32px
+    vertical-align top
 
 .checkout
     font-size 18.67px // 28px / 1.5
@@ -50,6 +23,7 @@ maestro()
         padding 8px 10px
         margin-top 3px
         resize none
+        vertical-align top
 
         &:focus
             outline-color #a35200
@@ -64,18 +38,27 @@ maestro()
 
     fieldset
         border none
-        margin 0
-        padding 0
         font-size 0
 
     &__title
         font-weight 700
         font-size 60px // 80px / 1.5
-        margin 0
         margin-bottom 20px
         text-transform uppercase
+        max-width 300px
+        hyphens()
+
+        @media (min-width 480px)
+            max-width 460px
+
+        @media (min-width 768px)
+            max-width 748px
+
+        @media (min-width 992px)
+            max-width 972px
 
         @media (min-width 1200px)
+            max-width 1180px
             font-size 80px
             margin-bottom 64px
 
@@ -100,16 +83,23 @@ maestro()
     &__subtitle
         font-weight 700
         font-size 22.6px // 34px / 1.5
-        margin 0
         margin-bottom 15px
         margin-left 3px
         text-transform uppercase
+        max-width 295px
+        hyphens()
+
+        @media (min-width 480px)
+            max-width 460px
+
+        @media (min-width 768px)
+            max-width 748px
 
         @media (min-width 1200px)
             font-size 34px
             margin-bottom 25px
 
-    &__line
+    &__row
         margin-bottom 15px
 
         @media (min-width 1200px)
@@ -136,6 +126,8 @@ maestro()
             display inline-block
             width 100%
             line-height 17px
+            vertical-align top
+            hyphens()
 
             @media (min-width 1200px)
                 line-height 27px
@@ -159,6 +151,7 @@ maestro()
     &__agreement
         font-size 18.67px // 28px / 1.5
         margin-bottom 30px
+        hyphens()
 
         @media (min-width 992px)
             margin-bottom 0
@@ -173,6 +166,7 @@ maestro()
             margin-right 5px
             position absolute
             opacity 0
+            vertical-align top
 
             &:focus + label
                 outline 2px solid rgba(163, 82, 0, 0.1)
@@ -235,6 +229,10 @@ maestro()
         @media (min-width 1200px)
             font-size 28px
 
+        td
+            max-width 0
+            hyphens()
+
         thead
             td
                 padding-bottom 15px
@@ -253,23 +251,20 @@ maestro()
         color $orange-dark-color
         cursor pointer
         font-size 18.67px // 28px / 1.5
-        padding 0
-        line-height 40px
-
-        @media (min-width 1200px)
-            font-size 28px
-            line-height 55px
+        padding 8px
+        overflow hidden
+        hyphens()
 
         &:focus
             outline-color #a35200
 
     &__quickpay
         display block
-        color black
-        position relative
+        width 100%
+        text-align left
+        border none
         background-color $orange-light-color
         padding 10px
-        text-decoration none
 
         &:focus
             outline-color #a35200
@@ -282,41 +277,22 @@ maestro()
             font-size 18.67px // 28px / 1.5
             margin-right 10px
             vertical-align middle
+            hyphens()
 
             @media (min-width 1200px)
                 font-size 28px
 
-    &__quickpay-img-wrap
+    &__quickpay-img
         display inline-block
+        width 203px
+        height 25px
         vertical-align middle
-        > *
-            display inline-block
-            margin-right 5px
-
-            &:last-child
-                margin-right 0
-
-    &__visa-img
-        background inline('visa.png') center no-repeat
-        quickpay-img()
-    &__visaelectron-img
-        background inline('visa-electron.png') center no-repeat
-        quickpay-img()
-    &__mastercard-img
-        background inline('master-card.png') center no-repeat
-        quickpay-img()
-    &__maestro-img
-        background inline('maestro.png') center no-repeat
-        quickpay-img()
+        background inline('quickpay.png') center no-repeat
 
     &__quickpay-desc
         p
-            margin 0
+            hyphens()
             font-size 13.33px // 20px / 1.5
-            margin-bottom 10px
 
             @media (min-width 1200px)
                 font-size 20px
-
-            &:last-child
-                margin-bottom 0

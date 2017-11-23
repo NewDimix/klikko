@@ -8,9 +8,9 @@
         font-size 26.7px // 40px / 1.5
         color $orange-dark-color
         font-weight 700
-        margin 0
         margin-bottom 15px
         text-transform uppercase
+        hyphens()
 
         @media (min-width 1200px)
             font-size 40px
@@ -18,13 +18,9 @@
 
     &__text
         p
+            hyphens()
             font-size 20px // 30px / 1.5
             color $grey-color
-            margin 0
-            margin-bottom 10px
-
-            &:last-child
-                margin-bottom 0
 
             @media (min-width 1200px)
                 font-size 30px

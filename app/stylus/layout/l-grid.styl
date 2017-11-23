@@ -6,7 +6,7 @@ html
 
 body
     min-width 320px
-    font-family Libertad Office, arial, verdana
+    font-family Libertad Office, arial, verdana, sans-serif
     font-size 18.67px // 28px / 1.5
     font-weight 400
     font-style normal
@@ -15,7 +15,7 @@ body
     flex-direction column
     min-height 100vh
 
-    @meida (min-width 1200px)
+    @media (min-width 1200px)
         font-size 28px
 
 .container
@@ -27,3 +27,11 @@ body
 
     @media (min-width 1727px)
         padding 0
+
+ul, li, fieldset, h1, h2, h3, h4, h5, h6, p, button
+    margin 0
+    padding 0
+
+p
+    &:not(:last-child)
+        margin-bottom 10px

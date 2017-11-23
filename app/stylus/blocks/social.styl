@@ -3,20 +3,18 @@
         font-size 26.7px // 40px / 1.5
         color $orange-dark-color
         font-weight 700
-        margin 0
         margin-bottom 15px
         text-transform uppercase
+        hyphens()
 
         @media (min-width 1200px)
             font-size 40px
             margin-bottom 30px
 
-    &__nav
-        padding 0
-
     &__item
         display inline-block
         margin-right 22px
+        vertical-align top
 
         &:last-child
             margin-right 0
@@ -26,10 +24,14 @@
         border-radius 50%
         width 70px
         height 70px
+        vertical-align top
 
         @media (min-width 1200px)
             width 110px
             height 110px
+
+        span
+            visibility hidden
 
         &_facebook
             background $orange-dark-color inline('facebook-logo.svg') center / 60% no-repeat
@@ -39,6 +41,7 @@
 
         &_google
             background $orange-dark-color inline('google-logo.svg') center / 70% no-repeat
+
 
     a
         &:focus
