@@ -1,12 +1,3 @@
-social-icon()
-    border-radius 50%
-    width 70px
-    height 70px
-
-    @media (min-width 1200px)
-        width 110px
-        height 110px
-
 .social
     &__title
         font-size 26.7px // 40px / 1.5
@@ -20,23 +11,34 @@ social-icon()
             font-size 40px
             margin-bottom 30px
 
-    &__facebook
+    &__nav
+        padding 0
+
+    &__item
         display inline-block
         margin-right 22px
-        background $orange-dark-color inline('facebook-logo.svg') center no-repeat
-        social-icon()
 
-    &__linkedin
-        display inline-block
-        margin-right 22px
-        background $orange-dark-color inline('linkedin-logo.svg') center no-repeat
-        social-icon()
+        &:last-child
+            margin-right 0
 
-    &__google
+    &__link
         display inline-block
-        background $orange-dark-color inline('google-logo.svg') center no-repeat
-        background-size 75%
-        social-icon()
+        border-radius 50%
+        width 70px
+        height 70px
+
+        @media (min-width 1200px)
+            width 110px
+            height 110px
+
+        &_facebook
+            background $orange-dark-color inline('facebook-logo.svg') center / 60% no-repeat
+
+        &_linkedin
+            background $orange-dark-color inline('linkedin-logo.svg') center / 55% no-repeat
+
+        &_google
+            background $orange-dark-color inline('google-logo.svg') center / 70% no-repeat
 
     a
         &:focus
